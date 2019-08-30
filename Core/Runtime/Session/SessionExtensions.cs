@@ -15,7 +15,7 @@
         {
             if (!session.UserId.HasValue)
             {
-                throw new Exception("Session.UserId is null! Probably, user is not logged in.");
+                throw new CoreException("Session.UserId is null! Probably, user is not logged in.");
             }
 
             return session.UserId.Value;
@@ -32,7 +32,7 @@
         {
             if (!session.TenantId.HasValue)
             {
-                throw new Exception("Session.TenantId is null! Possible problems: No user logged in or current logged in user in a host user (TenantId is always null for host users).");
+                throw new CoreException("Session.TenantId is null! Possible problems: No user logged in or current logged in user in a host user (TenantId is always null for host users).");
             }
 
             return session.TenantId.Value;

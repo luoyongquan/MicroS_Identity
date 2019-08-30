@@ -88,13 +88,13 @@ namespace Core.Modules
 
             var modules = Module.FindDependedModuleTypesRecursivelyIncludingGivenModule(_modules.StartupModuleType);
             
-            foreach (var plugInModuleType in _PlugInManager.PlugInSources.GetAllModules())
-            {
-                if (modules.AddIfNotContains(plugInModuleType))
-                {
-                    plugInModuleTypes.Add(plugInModuleType);
-                }
-            }
+            //foreach (var plugInModuleType in _PlugInManager.PlugInSources.GetAllModules())
+            //{
+            //    if (modules.AddIfNotContains(plugInModuleType))
+            //    {
+            //        plugInModuleTypes.Add(plugInModuleType);
+            //    }
+            //}
 
             return modules;
         }

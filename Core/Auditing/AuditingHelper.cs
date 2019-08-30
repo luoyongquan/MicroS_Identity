@@ -129,20 +129,20 @@ namespace Core.Auditing
 
         public void Save(AuditInfo auditInfo)
         {
-            using (var uow = _unitOfWorkManager.Begin(TransactionScopeOption.Suppress))
-            {
+            //using (var uow = _unitOfWorkManager.Begin(TransactionScopeOption.Suppress))
+            //{
                 AuditingStore.Save(auditInfo);
-                uow.Complete();
-            }
+            //    uow.Complete();
+            //}
         }
 
         public async Task SaveAsync(AuditInfo auditInfo)
         {
-            using (var uow = _unitOfWorkManager.Begin(TransactionScopeOption.Suppress))
-            {
+            //using (var uow = _unitOfWorkManager.Begin(TransactionScopeOption.Suppress))
+            //{
                 await AuditingStore.SaveAsync(auditInfo);
-                await uow.CompleteAsync();
-            }
+            //    await uow.CompleteAsync();
+            //}
         }
 
         private string ConvertArgumentsToJson(IDictionary<string, object> arguments)

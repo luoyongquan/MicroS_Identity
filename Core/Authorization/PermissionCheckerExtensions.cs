@@ -197,31 +197,40 @@ namespace Core.Authorization
                 return;
             }
 
-            var localizedPermissionNames = LocalizePermissionNames(permissionChecker, permissionNames);
+            //var localizedPermissionNames = LocalizePermissionNames(permissionChecker, permissionNames);
 
             if (requireAll)
             {
                 throw new AuthorizationException(
-                    string.Format(
-                        L(
-                            permissionChecker,
-                            "AllOfThesePermissionsMustBeGranted",
-                            "Required permissions are not granted. All of these permissions must be granted: {0}"
-                        ),
-                        string.Join(", ", localizedPermissionNames)
-                    )
+                //string.Format(
+                //    L(
+                //        permissionChecker,
+                //        "AllOfThesePermissionsMustBeGranted",
+                //        "Required permissions are not granted. All of these permissions must be granted: {0}"
+                //    ),
+                //    string.Join(", ", localizedPermissionNames)
+                //)
+                string.Format(
+                        "Required permissions are not granted. All of these permissions must be granted: {0}",
+                    string.Join(", ", "ALL")
+                )
                 );
             }
             else
             {
                 throw new AuthorizationException(
-                    string.Format(
-                        L(
-                            permissionChecker,
-                            "AtLeastOneOfThesePermissionsMustBeGranted",
-                            "Required permissions are not granted. At least one of these permissions must be granted: {0}"
-                        ),
-                        string.Join(", ", localizedPermissionNames)
+                     //string.Format(
+                     //    L(
+                     //        permissionChecker,
+                     //        "AtLeastOneOfThesePermissionsMustBeGranted",
+                     //        "Required permissions are not granted. At least one of these permissions must be granted: {0}"
+                     //    ),
+                     //    string.Join(", ", localizedPermissionNames)
+                     //)
+                     string.Format(
+
+                            "Required permissions are not granted. At least one of these permissions must be granted: {0}",
+                        string.Join(", ", "ALL")
                     )
                 );
             }
